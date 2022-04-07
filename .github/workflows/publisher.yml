@@ -9,7 +9,7 @@
 #     runs-on: ubuntu-latest
 
 #     steps:
-#       - uses: actions/checkout@v2
+#       - uses: actions/checkout@v3
 
 #       - name: Validate
 #         env:
@@ -23,6 +23,6 @@
 #         with:
 #           credentials: ${{ secrets.CREDENTIAL_JSON }}
 
-#       - uses: CDDelta/dart-version-auto-tag@v1.0.1
+#       - uses: peiffer-innovations/actions-dart-version-autotag@v1.0.1
 #         with:
 #           token: ${{ secrets.REPO_TOKEN }}
