@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [rest_pubsub](#rest_pubsub)
+  - [Using the library](#using-the-library)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # rest_pubsub
 
 Library to work with the the REST based APIs for [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/reference/rest).
