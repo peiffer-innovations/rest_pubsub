@@ -1,31 +1,31 @@
-# name: Dart Publisher
+name: Dart Publisher
 
-# on:
-#   push:
-#     branches: [main]
-#    paths:
-#      - .github/workflows/publisher.yml
-#      - pubspec.yaml
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publisher.yml
+      - pubspec.yaml
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-#       - name: Validate
-#         env:
-#           SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
-#         uses: peiffer-innovations/actions-flutter-validate@v1.1.2
-#         with:
-#           flutter_package: true
+      - name: Validate
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+        uses: peiffer-innovations/actions-flutter-validate@v1.1.2
+        with:
+          flutter_package: true
 
-#       - name: Publish
-#         uses: peiffer-innovations/actions-pub-publish@v1.0.1
-#         with:
-#           credentials: ${{ secrets.CREDENTIAL_JSON }}
+      - name: Publish
+        uses: peiffer-innovations/actions-pub-publish@v1.0.1
+        with:
+          credentials: ${{ secrets.CREDENTIAL_JSON }}
 
-#       - uses: peiffer-innovations/actions-dart-version-autotag@v1.0.1
-#         with:
-#           token: ${{ secrets.REPO_TOKEN }}
+      - uses: peiffer-innovations/actions-dart-version-autotag@v1.0.1
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
