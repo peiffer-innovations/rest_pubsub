@@ -1,16 +1,16 @@
-# name: Dart Pull Request Checker
+name: Dart Pull Request Checker
 
-# on:
-#   pull_request:
-#     branches: [main]
+on:
+  pull_request:
+    branches: [main]
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Validate
-#         uses: peiffer-innovations/actions-flutter-validate@v1.1.2
-#         with:
-#           flutter_package: true
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate
+        uses: peiffer-innovations/actions-flutter-validate@v1.1.2
+        with:
+          flutter_package: true
