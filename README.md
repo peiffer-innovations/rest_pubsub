@@ -11,7 +11,8 @@
 
 Library to work with the the REST based APIs for [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/reference/rest).
 
-All the requests support retries with a progressive backoff by default.  The streaming pull is designed to be fault tolerant with automated reconnects to ensure that once subscribed, the messages are properly received with minimal effort from the client.
+This is a companion to [grpc_pubsub](https://pub.dev/packages/grpc_pubsub) in that the APIs are almost 100% compatible.  The gRPC one is more efficient when running a Dart server, a desktop app, or a mobile app.  However, gRPC isn't supported for PubSub via the browser, so this should be used in when running as a web application.
+
 
 ## Using the library
 
@@ -19,7 +20,7 @@ Add the repo to your Flutter `pubspec.yaml` file.
 
 ```
 dependencies:
-  grpc_pubsub: <<version>> 
+  rest_pubsub: <<version>> 
 ```
 
 Then run...
