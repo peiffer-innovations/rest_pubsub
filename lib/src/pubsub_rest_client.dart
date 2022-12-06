@@ -129,7 +129,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.snapshots.create(
+          final result = await _pubsubApi.projects.snapshots.create(
             CreateSnapshotRequest(
               labels: labels,
               subscription: subscription.startsWith('projects/')
@@ -195,7 +195,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.create(
+          final result = await _pubsubApi.projects.subscriptions.create(
             Subscription(
               ackDeadlineSeconds: ackDeadlineSeconds,
               deadLetterPolicy: deadLetterPolicy,
@@ -255,7 +255,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var request = Topic(
+          final request = Topic(
             labels: labels,
             messageStoragePolicy: messageStoragePolicy,
             kmsKeyName: kmsKeyName,
@@ -265,7 +265,7 @@ class PubsubRestClient {
                 : '${messageRetentionDuration.inSeconds}s',
           );
 
-          var result = await _pubsubApi.projects.topics.create(
+          final result = await _pubsubApi.projects.topics.create(
             request,
             topic.startsWith('projects/')
                 ? topic
@@ -383,7 +383,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.detach(
+          final result = await _pubsubApi.projects.subscriptions.detach(
             subscription.startsWith('projects/')
                 ? subscription
                 : 'projects/$_projectId/subscriptions/$subscription',
@@ -415,7 +415,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.snapshots.get(
+          final result = await _pubsubApi.projects.snapshots.get(
             snapshot.startsWith('projects/')
                 ? snapshot
                 : 'projects/$_projectId/snapshots/$snapshot',
@@ -445,7 +445,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.get(
+          final result = await _pubsubApi.projects.subscriptions.get(
             subscription.startsWith('projects/')
                 ? subscription
                 : 'projects/$_projectId/subscriptions/$subscription',
@@ -472,7 +472,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.get(
+          final result = await _pubsubApi.projects.topics.get(
             topic.startsWith('projects/')
                 ? topic
                 : 'projects/$_projectId/topics/$topic',
@@ -503,13 +503,13 @@ class PubsubRestClient {
     int retries = 5,
   }) async {
     assert(_initialized);
-    var projectId = project ?? _projectId;
+    final projectId = project ?? _projectId;
     _logger.fine('[listSnapshots]: start -- [$projectId]');
 
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.snapshots.list(
+          final result = await _pubsubApi.projects.snapshots.list(
             projectId.startsWith('projects/')
                 ? projectId
                 : 'projects/$projectId',
@@ -538,13 +538,13 @@ class PubsubRestClient {
     int retries = 5,
   }) async {
     assert(_initialized);
-    var projectId = project ?? _projectId;
+    final projectId = project ?? _projectId;
     _logger.fine('[listSubscriptions]: start -- [$projectId]');
 
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.list(
+          final result = await _pubsubApi.projects.subscriptions.list(
             projectId.startsWith('projects/')
                 ? projectId
                 : 'projects/$projectId',
@@ -579,7 +579,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.snapshots.list(
+          final result = await _pubsubApi.projects.topics.snapshots.list(
             topic.startsWith('projects/')
                 ? topic
                 : 'projects/$_projectId/topics/$topic',
@@ -611,7 +611,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.subscriptions.list(
+          final result = await _pubsubApi.projects.topics.subscriptions.list(
             topic.startsWith('projects/')
                 ? topic
                 : 'projects/$_projectId/topics/$topic',
@@ -639,13 +639,13 @@ class PubsubRestClient {
     int retries = 5,
   }) async {
     assert(_initialized);
-    var projectId = project ?? _projectId;
+    final projectId = project ?? _projectId;
     _logger.fine('[listTopics]: start -- [$projectId]');
 
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.list(
+          final result = await _pubsubApi.projects.topics.list(
             projectId.startsWith('projects/')
                 ? projectId
                 : 'projects/$projectId',
@@ -758,7 +758,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.publish(
+          final result = await _pubsubApi.projects.topics.publish(
             PublishRequest(
               messages: messages.toList(),
             ),
@@ -799,9 +799,9 @@ class PubsubRestClient {
     assert(_initialized);
     _logger.fine('[pull]: start -- [$subscription]');
     try {
-      var messages = (await _execute<PullResponse>(
+      final messages = (await _execute<PullResponse>(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.pull(
+          final result = await _pubsubApi.projects.subscriptions.pull(
             PullRequest(
               maxMessages: maxMessages,
               returnImmediately: returnImmediately,
@@ -843,7 +843,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.seek(
+          final result = await _pubsubApi.projects.subscriptions.seek(
             SeekRequest(),
             subscription.startsWith('projects/')
                 ? subscription
@@ -877,7 +877,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.snapshots.patch(
+          final result = await _pubsubApi.projects.snapshots.patch(
             UpdateSnapshotRequest(
               snapshot: snapshot,
               updateMask: updateMask,
@@ -912,7 +912,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.subscriptions.patch(
+          final result = await _pubsubApi.projects.subscriptions.patch(
             UpdateSubscriptionRequest(
               subscription: subscription,
               updateMask: updateMask,
@@ -945,7 +945,7 @@ class PubsubRestClient {
     try {
       return await _execute(
         executor: () async {
-          var result = await _pubsubApi.projects.topics.patch(
+          final result = await _pubsubApi.projects.topics.patch(
             UpdateTopicRequest(
               topic: topic,
               updateMask: updateMask,
@@ -968,10 +968,10 @@ class PubsubRestClient {
   }) async {
     T? result;
 
-    var delay = Duration(milliseconds: 500);
+    var delay = const Duration(milliseconds: 500);
     var attempts = 1;
     while (result == null) {
-      var completer = Completer<T>();
+      final completer = Completer<T>();
       Completer<T>? innerCompleter = completer;
       try {
         // ignore: unawaited_futures
@@ -1014,7 +1014,7 @@ class PubsubRestClient {
     _subscriptions.forEach((sub) => sub.cancel());
     _subscriptions.clear();
 
-    var map = json.decode(_serviceAccountJson);
+    final map = json.decode(_serviceAccountJson);
     _client = await clientViaServiceAccount(
       ServiceAccountCredentials.fromJson(map),
       _scopes,
