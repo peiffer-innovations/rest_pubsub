@@ -4,7 +4,7 @@ version: '1.0.1'
 homepage: 'https://github.com/peiffer-innovations/rest_pubsub'
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: '>=2.19.0 <4.0.0'
 
 dependencies:
   googleapis: '^10.0.0'
