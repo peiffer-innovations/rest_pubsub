@@ -1,3 +1,8 @@
+## [1.0.1+1] - January 31, 2023
+
+* Automated dependency updates
+
+
 ## [1.0.1] - January 24th, 2023
 
 * Dart 2.9
@@ -61,6 +66,7 @@
 ## [1.0.0] - July 1st, 2022
 
 * Initial Release
+
 
 
 
