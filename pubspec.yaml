@@ -1,21 +1,21 @@
 name: 'rest_pubsub'
 description: 'REST based client for performing Pub/Sub operations within Dart and Flutter.'
-version: '1.0.1+2'
+version: '1.0.1+3'
 homepage: 'https://github.com/peiffer-innovations/rest_pubsub'
 
-environment:
+environment: 
   sdk: '>=2.19.0 <4.0.0'
 
-dependencies:
+dependencies: 
   googleapis: '^10.1.0'
-  googleapis_auth: '^1.3.1'
+  googleapis_auth: '^1.4.0'
   logging: '^1.1.1'
   meta: '^1.8.0'
 
-dev_dependencies:
+dev_dependencies: 
   test: '^1.23.1'
 
-ignore_updates:
+ignore_updates: 
   - 'archive'
   - 'async'
   - 'boolean_selector'
